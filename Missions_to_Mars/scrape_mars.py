@@ -41,8 +41,9 @@ def scrape():
     # Read tabes from HTML
     tables = pd.read_html(url)
     mars_facts = tables[1]
-    mars_facts_html = mars_facts.to_html()
-    mars_facts_html = mars_facts_html.replace('\n', '')
+    mars_facts = mars_facts.rename(columns={0: 'Description', 1: 'Value'})
+    mars_facts.set_index('Description', inplace=True)
+    mars_facts_html = mars_facts.to_html().replace('\n', '')
 
     # Mars Hemispheres
     url = 'https://marshemispheres.com/'
