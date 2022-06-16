@@ -21,7 +21,6 @@ def scrape():
     news_title = soup.find('div', class_='content_title').get_text()
     news_p = soup.find('div', class_='article_teaser_body').get_text()
 
-    browser.quit()
 
     # JPL Featured Image
     # Visit url
@@ -35,7 +34,6 @@ def scrape():
     # Query
     featured_image_url = url + soup.find('img', class_='headerimage fade-in')['src']
 
-    browser.quit()
 
     # Mars Facts
     url = 'https://galaxyfacts-mars.com/'
@@ -56,7 +54,7 @@ def scrape():
     hemisphere_image_urls = []
 
     # Hemispheres as item elements
-    mars_items = mars_divs.find_all('div', class_='item')
+    mars_items = soup.find_all('div', class_='item')
 
     # Looping through each hemisphere item
     for x in mars_items:
