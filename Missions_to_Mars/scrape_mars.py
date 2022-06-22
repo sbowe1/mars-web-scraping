@@ -86,11 +86,11 @@ def scrape():
 
     # Compiling all results into a single dictionary
     mars_data = {
-        'News Title': news_title,
-        'News Paragraph Text': news_p,
-        'Featured Image URL': featured_image_url,
-        'Mars Facts': mars_facts_html,
-        'Hemisphere Images': hemisphere_image_urls
+        'news_title': news_title,
+        'news_p': news_p,
+        'featured_image_url': featured_image_url,
+        'mars_facts_html': mars_facts_html,
+        'hemisphere_image_urls': hemisphere_image_urls
     }
 
     return mars_data
